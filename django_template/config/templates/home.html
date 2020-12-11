@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block head %}{% endblock %}
+{% block body %}
+
+<h1>Home</h1>
+
+{% if all_items.empty %}
+<h2>No items in database!</h2>
+{% else %}
+{% for item in latest_items %}
+<li>{{item.item_label}}: {{item.last_done.day}}.{{item.last_done.month}}.</li>
+{% endfor %}
+
+{% endif %}
+<br>
+<button onclick='updateView()'>Hae ruoka!</button>
+<!-- <div id="new_item">{% include 'item.html' %}</div> -->
+{% endblock %}

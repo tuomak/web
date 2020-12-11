@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{ random_item.item_label }}{% endblock %}
+{% block body %}
+<h1 id='food'>{{ random_item.item_label }}</h1>
+<script>
+    link_base = 'http://www.google.com/search?q='
+    food = document.getElementById('food').innerHTML
+    food_parts = food.split(' ')
+    link = document.createElement('a')
+    link.innerHTML = 'Resepti googlesta'
+    link.href = link_base + food_parts.join('+')
+    document.body.appendChild(link)
+
+    //console.log(document.getElementsByTagName('a').href)
+</script>
+
+{% endblock %}
